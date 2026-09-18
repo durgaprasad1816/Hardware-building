@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>BuildMart - Stock Replenishment</title>
+
+    <link rel="stylesheet"
+          href="stock-replenishment.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP HEADER
+     ===================================================== -->
+
+<header class="top-header">
+
+    <div class="header-left">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                BM
+            </div>
+
+            <div>
+
+                <h2>BuildMart</h2>
+
+                <span>
+                    Construction Inventory
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="page-heading">
+
+            <div class="breadcrumb">
+                Dashboard / Stock Replenishment
+            </div>
+
+            <h1>
+                Stock Replenishment Request
+            </h1>
+
+            <p>
+                Request products from your supplier when stock is running low
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        class="back-btn"
+        onclick="goBack()">
+
+        ← Back to Dashboard
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTAINER
+     ===================================================== -->
+
+<main class="main-container">
+
+
+    <!-- =================================================
+         REQUEST HEADER
+         ================================================= -->
+
+    <div class="request-header">
+
+
+        <div class="request-info">
+
+
+            <div class="request-id-box">
+
+                <span>
+                    REQUEST ID
+                </span>
+
+                <h2 id="requestId">
+                    REQ-2026-0000
+                </h2>
+
+            </div>
+
+
+            <div class="request-date-box">
+
+                <span>
+                    REQUEST DATE
+                </span>
+
+                <input
+                    type="text"
+                    id="requestDate"
+                    readonly>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="status-box">
+
+            <label for="requestStatus">
+                Status
+            </label>
+
+            <select id="requestStatus">
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="Approved">
+                    Approved
+                </option>
+
+                <option value="Rejected">
+                    Rejected
+                </option>
+
+                <option value="Fulfilled">
+                    Fulfilled
+                </option>
+
+                <option value="Draft">
+                    Draft
+                </option>
+
+            </select>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         01 REQUEST DETAILS
+         ================================================= -->
+
+    <section class="form-section request-details">
+
+
+        <div class="section-header">
+
+            <div class="section-number">
+                01
+            </div>
+
+            <div>
+
+                <h2>
+                    Request Details
+                </h2>
+
+                <p>
+                    Provide the basic information about your stock request
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Required By Date
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="date"
+                    id="requiredByDate"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Priority
+                    <span>*</span>
+                </label>
+
+                <select
+                    id="priority"
+                    required>
+
+                    <option value="">
+                        Select Priority
+                    </option>
+
+                    <option value="Low">
+                        Low
+                    </option>
+
+                    <option value="Medium">
+                        Medium
+                    </option>
+
+                    <option value="High">
+                        High
+                    </option>
+
+                    <option value="Urgent">
+                        Urgent
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         02 SHOP DETAILS
+         ================================================= -->
+
+    <section class="form-section shop-details">
+
+
+        <div class="section-header">
+
+            <div class="section-number">
+                02
+            </div>
+
+            <div>
+
+                <h2>
+                    Shop Details
+                </h2>
+
+                <p>
+                    Enter the shop information requesting the stock
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Shop Name
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="shopName"
+                    placeholder="Enter shop name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Shop ID
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="shopId"
+                    placeholder="Enter shop ID"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Owner / Manager Name
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="ownerManager"
+                    placeholder="Enter owner or manager name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    id="shopPhone"
+                    placeholder="Enter phone number"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Email
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="shopEmail"
+                    placeholder="Enter email"
+                    required>
+
+            </div>
+
+
+            <div class="form-group full-width">
+
+                <label>
+                    Shop Address
+                    <span>*</span>
+                </label>
+
+                <textarea
+                    id="shopAddress"
+                    placeholder="Enter complete shop address"
+                    required></textarea>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         03 SUPPLIER DETAILS
+         ================================================= -->
+
+    <section class="form-section supplier-details">
+
+
+        <div class="section-header">
+
+            <div class="section-number">
+                03
+            </div>
+
+            <div>
+
+                <h2>
+                    Supplier / Retailer Details
+                </h2>
+
+                <p>
+                    Enter the supplier or retailer information
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Supplier / Retailer Name
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="supplierName"
+                    placeholder="Enter supplier name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Supplier ID
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="supplierId"
+                    placeholder="Enter supplier ID"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Contact Person
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="contactPerson"
+                    placeholder="Enter contact person"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="supplierPhone"
+                    placeholder="Enter supplier phone">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="supplierEmail"
+                    placeholder="Enter supplier email">
+
+            </div>
+
+
+            <div class="form-group full-width">
+
+                <label>
+                    Supplier Address
+                </label>
+
+                <textarea
+                    id="supplierAddress"
+                    placeholder="Enter supplier address"></textarea>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         04 PRODUCTS
+         ================================================= -->
+
+    <section class="form-section product-details">
+
+
+        <div class="section-header">
+
+
+            <div class="section-number">
+                04
+            </div>
+
+
+            <div class="product-header">
+
+
+                <div class="section-title-area">
+
+                    <div>
+
+                        <h2>
+                            Products to Replenish
+                        </h2>
+
+                        <p>
+                            Add one or more products that need to be refilled
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="add-product-btn"
+                    onclick="addProduct()">
+
+                    + Add Product
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!--
+            IMPORTANT:
+
+            DO NOT PUT PRODUCT 1 HERE.
+
+            JavaScript creates Product 1 automatically.
+            When + Add Product is clicked,
+            Product 2, Product 3, Product 4... are created.
+        -->
+
+        <div id="productsContainer"></div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         05 DELIVERY DETAILS
+         ================================================= -->
+
+    <section class="form-section delivery-details">
+
+
+        <div class="section-header">
+
+            <div class="section-number">
+                05
+            </div>
+
+            <div>
+
+                <h2>
+                    Delivery Details
+                </h2>
+
+                <p>
+                    Provide the preferred delivery information
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group full-width">
+
+                <label>
+                    Delivery Address
+                    <span>*</span>
+                </label>
+
+                <textarea
+                    id="deliveryAddress"
+                    placeholder="Enter delivery address"
+                    required></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Preferred Delivery Date
+                </label>
+
+                <input
+                    type="date"
+                    id="deliveryDate">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Preferred Delivery Time
+                </label>
+
+                <input
+                    type="time"
+                    id="deliveryTime">
+
+            </div>
+
+
+            <div class="form-group full-width">
+
+                <label>
+                    Delivery Instructions
+                </label>
+
+                <textarea
+                    id="deliveryInstructions"
+                    placeholder="Example: Please deliver before 5 PM"></textarea>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         06 ADDITIONAL DETAILS
+         ================================================= -->
+
+    <section class="form-section additional-details">
+
+
+        <div class="section-header">
+
+            <div class="section-number">
+                06
+            </div>
+
+            <div>
+
+                <h2>
+                    Additional Details
+                </h2>
+
+                <p>
+                    Add any additional information related to the request
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group full-width">
+
+                <label>
+                    Reason for Request
+                </label>
+
+                <textarea
+                    id="reasonRequest"
+                    placeholder="Explain why the stock is required"></textarea>
+
+            </div>
+
+
+            <div class="form-group full-width">
+
+                <label>
+                    Remarks / Notes
+                </label>
+
+                <textarea
+                    id="remarks"
+                    placeholder="Enter additional remarks or notes"></textarea>
+
+            </div>
+
+
+            <div class="form-group full-width">
+
+                <label>
+                    Attachment
+                    <small>(Optional)</small>
+                </label>
+
+                <input
+                    type="file"
+                    id="attachment">
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         07 REQUEST SUMMARY
+         ================================================= -->
+
+    <section class="summary-section">
+
+
+        <div class="summary-header">
+
+            <div>
+
+                <div class="summary-number">
+                    07
+                </div>
+
+                <div>
+
+                    <h2>
+                        Request Summary
+                    </h2>
+
+                    <p>
+                        Review the estimated stock request amount
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-grid">
+
+
+            <div class="summary-item">
+
+                <span>
+                    Total Number of Products
+                </span>
+
+                <strong id="totalProducts">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <span>
+                    Total Requested Quantity
+                </span>
+
+                <strong id="totalQuantity">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <span>
+                    Estimated Total Amount
+                </span>
+
+                <strong id="estimatedAmount">
+                    ₹0.00
+                </strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <label>
+                    Discount
+                </label>
+
+                <input
+                    type="number"
+                    id="discount"
+                    value="0"
+                    min="0"
+                    step="0.01">
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <label>
+                    Tax (%)
+                </label>
+
+                <input
+                    type="number"
+                    id="tax"
+                    value="0"
+                    min="0"
+                    step="0.01">
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <label>
+                    Delivery Charges
+                </label>
+
+                <input
+                    type="number"
+                    id="deliveryCharges"
+                    value="0"
+                    min="0"
+                    step="0.01">
+
+            </div>
+
+
+        </div>
+
+
+        <div class="final-amount-box">
+
+            <span>
+                FINAL ESTIMATED AMOUNT
+            </span>
+
+            <strong id="finalAmount">
+                ₹0.00
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         ACTION BUTTONS
+         ================================================= -->
+
+    <div class="action-bar">
+
+
+        <button
+            type="button"
+            class="cancel-btn"
+            onclick="cancelRequest()">
+
+            Cancel
+
+        </button>
+
+
+        <button
+            type="button"
+            class="draft-btn"
+            onclick="saveRequest('Draft')">
+
+            Save as Draft
+
+        </button>
+
+
+        <button
+            type="button"
+            class="submit-btn"
+            onclick="saveRequest('Pending')">
+
+            Submit Request
+
+        </button>
+
+
+    </div>
+
+
+    <div id="message"></div>
+
+
+</main>
+
+
+
+<script src="stock-replenishment.js"></script>
+
+</body>
+
+</html>
