@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sales</title>
+
+    <link rel="stylesheet" href="css/sales.css">
+</head>
+
+<body>
+
+    <div class="sales-container">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h1>Sales</h1>
+                <p>Create and manage customer sales</p>
+            </div>
+        </div>
+
+
+        <!-- Customer Section -->
+        <div class="customer-section">
+
+            <label for="customer">Customer</label>
+
+            <select id="customer">
+                <option value="">Select Customer</option>
+                <option value="1">Ravi Kumar</option>
+                <option value="2">Sita Devi</option>
+                <option value="3">Arjun Rao</option>
+            </select>
+
+        </div>
+
+
+        <!-- Product Table -->
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Available</th>
+                        <th>Unit Price</th>
+                        <th>Discount</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="productTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- Add Product -->
+        <div class="add-product-area">
+
+            <button
+                type="button"
+                class="add-product-btn"
+                onclick="addProductRow()">
+
+                + Add Product
+
+            </button>
+
+        </div>
+
+
+        <!-- Summary -->
+        <div class="summary-section">
+
+            <div class="summary-row">
+
+                <span>Subtotal</span>
+
+                <span id="subtotal">
+                    ₹0.00
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <label for="tax">
+                    Tax
+                </label>
+
+                <input
+                    type="number"
+                    id="tax"
+                    value="0"
+                    min="0"
+                    step="0.01">
+
+            </div>
+
+
+            <div class="summary-row grand-total">
+
+                <span>Grand Total</span>
+
+                <span id="grandTotal">
+                    ₹0.00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Payment Section -->
+        <div class="payment-section">
+
+            <div class="form-group">
+
+                <label for="paymentMethod">
+                    Payment Method
+                </label>
+
+                <select id="paymentMethod">
+
+                    <option value="">
+                        Select Payment Method
+                    </option>
+
+                    <option value="Cash">Cash</option>
+                    <option value="Card">Card</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Other">Other</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="paymentStatus">
+                    Payment Status
+                </label>
+
+                <select id="paymentStatus">
+
+                    <option value="">
+                        Select Payment Status
+                    </option>
+
+                    <option value="Paid">Paid</option>
+                    <option value="Partially Paid">
+                        Partially Paid
+                    </option>
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- Buttons -->
+        <div class="action-buttons">
+
+            <button
+                type="button"
+                class="complete-sale-btn"
+                onclick="completeSale()">
+
+                Complete Sale
+
+            </button>
+
+
+            <button
+                type="button"
+                class="invoice-btn"
+                onclick="generateInvoice()">
+
+                Generate Invoice
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/sales.js"></script>
+
+</body>
+
+</html>
