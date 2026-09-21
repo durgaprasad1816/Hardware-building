@@ -1,0 +1,231 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
+    color: #333;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ================================
+   HEADINGS
+================================ */
+
+h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   INPUTS
+================================ */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #555;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* ================================
+   TOTAL AMOUNT
+================================ */
+
+#totalAmount {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+
+/* ================================
+   OTP OPTIONS
+================================ */
+
+.otp-options {
+    display: flex;
+    gap: 30px;
+    margin: 15px 0 25px 0;
+}
+
+.otp-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.otp-options input[type="radio"] {
+    width: auto;
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+
+/* ================================
+   MESSAGE
+================================ */
+
+.message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* ================================
+   OTP SECTION
+================================ */
+
+.otp-section {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.otp-section h2 {
+    margin-top: 0;
+}
+
+
+/* ================================
+   SUCCESS SECTION
+================================ */
+
+#successSection {
+    margin-top: 25px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #f3f3f3;
+}
+
+#successSection h2 {
+    margin-top: 0;
+    border-bottom: none;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .otp-options {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+

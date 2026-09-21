@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Purchase Information</title>
+
+    <link rel="stylesheet"
+          href="purchase.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Purchase Information</h1>
+
+
+    <!-- Purchase Information -->
+
+    <div class="top-section">
+
+        <div class="input-group">
+
+            <label>Purchase Date</label>
+
+            <input type="date"
+                   id="purchaseDate">
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>Supplier Name</label>
+
+            <input type="text"
+                   id="supplierName"
+                   placeholder="Enter supplier name">
+
+        </div>
+
+    </div>
+
+
+    <!-- Product Details -->
+
+    <div class="product-section">
+
+        <h2>Product Details</h2>
+
+
+        <div class="product-form">
+
+            <div class="input-group">
+
+                <label>Product Name</label>
+
+                <input type="text"
+                       id="productName"
+                       placeholder="Product name">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Cost</label>
+
+                <input type="number"
+                       id="cost"
+                       placeholder="Cost">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Quantity</label>
+
+                <input type="number"
+                       id="quantity"
+                       placeholder="Quantity">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Stock</label>
+
+                <input type="number"
+                       id="stock"
+                       placeholder="Stock">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Discount %</label>
+
+                <input type="number"
+                       id="discount"
+                       placeholder="Discount">
+
+            </div>
+
+        </div>
+
+
+        <!-- Automatic Calculation -->
+
+        <div class="calculation-box">
+
+            <div>
+
+                <span>Gross Amount</span>
+
+                <strong id="grossAmount">
+                    ₹0.00
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Discount Amount</span>
+
+                <strong id="discountAmount">
+                    ₹0.00
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Total Amount</span>
+
+                <strong id="totalAmount">
+                    ₹0.00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <button class="add-btn"
+                onclick="addProduct()">
+
+            + Add Product
+
+        </button>
+
+    </div>
+
+
+    <!-- Product Table -->
+
+    <div class="table-section">
+
+        <h2>Products</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Date</th>
+
+                    <th>Product</th>
+
+                    <th>Cost</th>
+
+                    <th>Quantity</th>
+
+                    <th>Stock</th>
+
+                    <th>Discount %</th>
+
+                    <th>Discount Amount</th>
+
+                    <th>Total</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="productTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- Summary -->
+
+    <div class="summary">
+
+        <h2>Purchase Summary</h2>
+
+
+        <div class="summary-cards">
+
+
+            <div class="card">
+
+                <span>Total Products</span>
+
+                <strong id="totalProducts">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="card">
+
+                <span>Total Quantity</span>
+
+                <strong id="totalQuantity">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="card">
+
+                <span>Overall Discount</span>
+
+                <strong id="overallDiscount">
+                    ₹0.00
+                </strong>
+
+            </div>
+
+
+            <div class="card">
+
+                <span>Grand Total</span>
+
+                <strong id="grandTotal">
+                    ₹0.00
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Attachments -->
+
+    <div class="attachment-section">
+
+        <h2>Product Documents</h2>
+
+
+        <label>
+            Attach Product Sheet
+        </label>
+
+
+        <input type="file"
+               id="productPdf"
+               accept=".pdf,.xlsx,.xls,.csv">
+
+
+        <label>
+            Attach Product Pictures
+        </label>
+
+
+        <input type="file"
+               id="productImages"
+               accept="image/*"
+               multiple>
+
+
+        <div id="preview"></div>
+
+    </div>
+
+
+    <!-- Save -->
+
+    <button class="save-btn"
+            onclick="savePurchase()">
+
+        Save Purchase
+
+    </button>
+
+
+    <p id="message"></p>
+
+</div>
+
+
+<script src="purchase.js"></script>
+
+</body>
+
+</html>

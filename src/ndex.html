@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paint Shop Order</title>
+
+    <link rel="stylesheet" href="tyle.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Paint Shop Order</h1>
+
+        <p class="subtitle">
+            Enter your details and paint order information
+        </p>
+
+
+        <!-- ================= CUSTOMER DETAILS ================= -->
+
+        <form id="orderForm">
+
+            <h2>Customer Details</h2>
+
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Customer Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    name="customerName"
+                    placeholder="Enter customer name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter phone number"
+                    maxlength="15"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter email address"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="address">
+                    Address
+                </label>
+
+                <textarea
+                    id="address"
+                    name="address"
+                    placeholder="Enter your address"
+                    rows="3"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- ================= PAINT DETAILS ================= -->
+
+            <h2>Paint Details</h2>
+
+
+            <div class="form-group">
+
+                <label for="paintName">
+                    Paint Name
+                </label>
+
+                <input
+                    type="text"
+                    id="paintName"
+                    name="paintName"
+                    placeholder="Example: Asian Paints"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="paintType">
+                    Paint Type
+                </label>
+
+                <select
+                    id="paintType"
+                    name="paintType"
+                    required
+                >
+
+                    <option value="">
+                        Select Paint Type
+                    </option>
+
+                    <option value="Interior">
+                        Interior
+                    </option>
+
+                    <option value="Exterior">
+                        Exterior
+                    </option>
+
+                    <option value="Wood Paint">
+                        Wood Paint
+                    </option>
+
+                    <option value="Metal Paint">
+                        Metal Paint
+                    </option>
+
+                    <option value="Primer">
+                        Primer
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="color">
+                    Color
+                </label>
+
+                <input
+                    type="text"
+                    id="color"
+                    name="color"
+                    placeholder="Example: Blue"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    placeholder="Enter quantity"
+                    min="1"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="price">
+                    Price per Unit
+                </label>
+
+                <input
+                    type="number"
+                    id="price"
+                    name="price"
+                    placeholder="Enter price"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+            </div>
+
+
+            <!-- ================= TOTAL ================= -->
+
+            <div class="form-group">
+
+                <label for="totalAmount">
+                    Total Amount
+                </label>
+
+                <input
+                    type="text"
+                    id="totalAmount"
+                    name="totalAmount"
+                    placeholder="Total amount"
+                    readonly
+                >
+
+            </div>
+
+
+            <!-- ================= OTP TYPE ================= -->
+
+            <h2>OTP Verification</h2>
+
+            <p>
+                Select how you want to receive your OTP:
+            </p>
+
+
+            <div class="otp-options">
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="otpType"
+                        value="PHONE"
+                        required
+                    >
+
+                    Phone
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="otpType"
+                        value="EMAIL"
+                    >
+
+                    Email
+
+                </label>
+
+            </div>
+
+
+            <!-- ================= SUBMIT ================= -->
+
+            <button
+                type="submit"
+                id="placeOrderButton"
+            >
+                Place Order
+            </button>
+
+
+            <!-- ================= MESSAGE ================= -->
+
+            <p
+                id="message"
+                class="message"
+            ></p>
+
+        </form>
+
+
+        <!-- ================= OTP SECTION ================= -->
+
+        <div
+            id="otpSection"
+            class="otp-section"
+            style="display: none;"
+        >
+
+            <h2>
+                OTP Verification
+            </h2>
+
+
+            <p>
+                Enter the OTP sent to your selected
+                phone number or email.
+            </p>
+
+
+            <div class="form-group">
+
+                <label for="otp">
+                    Enter OTP
+                </label>
+
+                <input
+                    type="text"
+                    id="otp"
+                    name="otp"
+                    placeholder="Enter 6-digit OTP"
+                    maxlength="6"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                id="verifyOtpButton"
+            >
+                Verify OTP
+            </button>
+
+
+            <p
+                id="otpMessage"
+                class="message"
+            ></p>
+
+        </div>
+
+
+        <!-- ================= SUCCESS MESSAGE ================= -->
+
+        <div
+            id="successSection"
+            style="display: none;"
+        >
+
+            <h2>
+                Order Successful
+            </h2>
+
+            <p id="successMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MSG91 OTP WIDGET ================= -->
+
+    <script
+        type="text/javascript"
+        src="https://verify.msg91.com/otp-provider.js">
+    </script>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="cript.js"></script>
+
+</body>
+
+</html>

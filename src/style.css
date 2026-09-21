@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background-color: #eef4f8;
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+}
+
+
+/* Main Container */
+
+.container {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    overflow: hidden;
+}
+
+
+/* Header */
+
+.header {
+
+    background-color: #1976d2;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+
+.header h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+.header p {
+
+    font-size: 16px;
+}
+
+
+/* Form */
+
+form {
+
+    padding: 35px;
+}
+
+
+form h2 {
+
+    color: #333;
+
+    margin-bottom: 25px;
+
+    font-size: 23px;
+
+    border-bottom: 2px solid #1976d2;
+
+    padding-bottom: 10px;
+}
+
+
+/* Two-column row */
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Form group */
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+
+/* Labels */
+
+label {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    margin-bottom: 8px;
+}
+
+
+/* Inputs */
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    font-size: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background-color: white;
+}
+
+
+/* Focus */
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color: #1976d2;
+
+    box-shadow: 0 0 5px rgba(25, 118, 210, 0.25);
+}
+
+
+/* Textarea */
+
+textarea {
+
+    resize: vertical;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* Buttons */
+
+.button-container {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 10px;
+}
+
+
+button {
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+/* Register */
+
+.register-button {
+
+    background-color: #1976d2;
+
+    color: white;
+}
+
+
+.register-button:hover {
+
+    background-color: #125ca5;
+}
+
+
+/* Clear */
+
+.clear-button {
+
+    background-color: #777;
+
+    color: white;
+}
+
+
+.clear-button:hover {
+
+    background-color: #555;
+}
+
+
+/* Message */
+
+.message {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border-radius: 6px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+
+/* Success message */
+
+.message.success {
+
+    display: block;
+
+    background-color: #d4edda;
+
+    color: #155724;
+}
+
+
+/* Error message */
+
+.message.error {
+
+    display: block;
+
+    background-color: #f8d7da;
+
+    color: #721c24;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    form {
+
+        padding: 20px;
+    }
+
+
+    .header h1 {
+
+        font-size: 24px;
+    }
+
+
+    .button-container {
+
+        flex-direction: column;
+    }
+
+}
